@@ -44,10 +44,10 @@ echo print_r($table) . "<br>";
  */
 $tab = ["test" => true, "name" => "Doe", "age" => 32];
 // TODO Votre code ici.
-if(isset($tab["doNotExits"])){
-    echo "Existe pas";
-} else {
+if(array_key_exists('Do not exists', $tab)){
     echo "Existe";
+} else {
+    echo "Existe pas";
 }
 
 /**
@@ -75,13 +75,27 @@ if(isset($tab["doNotExits"])){
 
 // TODO votre code ici.
 
-$bool = true;
+$booli = false;
 $number = 10;
 $decNumb = 14.57;
 $text = "je suis ici";
 
-function maFunction ($bool) {
-    if (is_bool($bool) === true) {
-        echo $bool . "est true";
+
+function myFunction ($test) {
+    if(is_bool($test)) {
+        echo "<p>ma variable $test est un booléen";
+    } elseif (is_float($test)) {
+        echo "<p>ma variable $test est un nombre décimal";
+    } elseif (is_int($test)) {
+        echo "<p>ma variable $test est un nombre entier";
+    } elseif ((is_string($test))) {
+        echo "<p>ma variable $test est une chaîne de caratères";
+    } else {
+        echo "<p>ma variable $test est d'un autre type";
     }
 }
+
+myFunction($booli);
+myFunction($number);
+myFunction($decNumb);
+myFunction($text);
