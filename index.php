@@ -57,7 +57,8 @@ if(isset($tab["doNotExits"])){
  *    - un nombre flottant ( à virgule )
  *    - une chaîne de caractère.
  *
- * Créez une fonction qui prend en paramètre une simple variable, cette fonction doit tester le type du contenu de la
+ * Créez une fonction qui prend en paramètre une simple variable, cette fonction doit tester le type du
+ * contenu de la
  * variable
  * et afficher le texte "La variable passé en paramètre est de type: TYPE".
  *
@@ -78,3 +79,9 @@ $bool = true;
 $number = 10;
 $decNumb = 14.57;
 $text = "je suis ici";
+
+function maFunction ($bool) {
+    if (is_bool($bool) === true) {
+        echo $bool . "est true";
+    }
+}
